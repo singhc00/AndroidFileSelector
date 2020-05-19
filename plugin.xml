@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-fileselector" version="0.0.1">
+    <name>ToastyPlugin</name>
+
+    <description>An Android Cordova plugin that allows users to display simple Toast messages at the bottom of the screen.</description>
+    <license>MIT</license>
+
+    <keywords>cordova,android,file,,input</keywords>
+    <repo>https://github.com/singhc00/AndroidFileSelector.git</repo>
+    <issue>https://github.com/singhc00/AndroidFileSelector/issues</issue>
+  
+    <engines>
+        <engine name="cordova" version=">=3.0.0"/>
+    </engines>
+  
+    <js-module src="www/fileselector.js" name="fileSelector">
+        <clobbers target="window.plugins.fileSelector" />
+    </js-module>
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="FileSelector">
+                <param name="android-package" value="com.singhc00.cordova.plugin.FileSelector"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/ToastyPlugin.java" target-dir="src/com/singhc00/cordova/plugin" />
+    </platform>
+</plugin>
